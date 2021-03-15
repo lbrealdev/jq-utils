@@ -9,3 +9,8 @@ Get nodes with jq query:
 ```
 oc get no -o json | jq -r '[.items[] | {NODE:.metadata.name, IP:.status.addresses[1].address}]'
 ```
+
+Get events with sort by last timestamp:
+```
+oc get ev --sort-by='{.lastTimestamp}'
+```
